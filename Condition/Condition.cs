@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 
 namespace Condition
 {
@@ -9,8 +10,7 @@ namespace Condition
         /// </summary>        
         public static int Task1(int n)
         {
-            //TODO :Delete line below and write your own solution 
-            throw new NotImplementedException();
+            return n < 0 ? -n : (int)Math.Pow(n, 2);
         }
 
         /// <summary>
@@ -18,8 +18,9 @@ namespace Condition
         /// </summary>  
         public static int Task2(int n)
         {
-            //TODO :Delete  line  below and write your own solution 
-            throw new NotImplementedException();
+            if (n < 100 || n > 999) return n;
+
+            return Convert.ToInt32(string.Concat(n.ToString().OrderByDescending(c => c)));
         }
     }
 }
